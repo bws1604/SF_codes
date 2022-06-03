@@ -3,14 +3,14 @@
 """
 Created on Mon Nov 22 22:31:39 2021
 
-@author: barbarawilsonsoto
+@author: localusername
 """
 import numpy as np
 import pandas as pd
 from datetime import datetime
 import math
 
-path = '/Users/barbarawilsonsoto/GithubDocs/Digin2022/'
+path = '/Users/localusername/GithubDocs/Digin2022/'
 mergeby = 'Edomain'
 #get the conference list and SFDC master report
 confList = pd.read_csv(path + 'Edomain.csv')
