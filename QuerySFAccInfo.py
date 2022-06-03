@@ -3,7 +3,7 @@
 """
 Created on Thu Aug 12 12:56:42 2021
 
-@author: barbarawilsonsoto
+@author: localusername
 """
 
 import json
@@ -13,8 +13,8 @@ from datetime import datetime
 from simple_salesforce import Salesforce, SalesforceLogin, SFType
 
 #specify the location where to save the output documents in a folder outside the Github folder
-path = '/Users/barbarawilsonsoto/GithubDocs/Digin2022/'
-login_path = '/Users/barbarawilsonsoto/GithubDocs/login/'
+path = '/Users/localusername/GithubDocs/Digin2022/'
+login_path = '/Users/localusername/GithubDocs/login/'
 
 loginInfo = json.load(open(login_path + 'login.json'))
 username = loginInfo['username']
@@ -26,10 +26,7 @@ session_id, instance = SalesforceLogin(username=username, password=password, sec
 sf = Salesforce(instance=instance, session_id=session_id)
 
 #set the values or attributes to query
-#values = ['Name', 'AccountId', 'Email', 'OwnerId', 'Account.Website', 'Account.OwnerId', 'Account.Number_of_Open_Opportunities__c', 'Account.LastActivityDate', 'Account.LastModifiedById', 'Account.LastModifiedDate', 'Account.Industry']
 values = ['Name','Id','OwnerId','ParentId','Website','Industry','Number_of_Open_Opportunities__c','Account_Status__c','Current_ARR__c','LastActivityDate','BDR_Status__c','Type','Target_Account_Type__c','BillingCountry'] 
-
-
 
 querySOQL = """SELECT {0}""".format(", ".join(values))+ """ FROM Account"""
 
