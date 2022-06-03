@@ -3,7 +3,7 @@
 """
 Created on Fri Dec 17 09:49:54 2021
 
-@author: barbarawilsonsoto
+@author: 'localusername'
 """
 import json
 from datetime import datetime
@@ -12,8 +12,8 @@ import pandas as pd
 from simple_salesforce import Salesforce, SalesforceLogin, SFType
 
 #specify the location where to save the output documents in a folder outside the Github folder
-path = '/Users/barbarawilsonsoto/GithubDocs/CleanUp/'
-login_path='/Users/barbarawilsonsoto/GithubDocs/login/'
+path = '/Users/localusername/GithubDocs/CleanUp/'
+login_path='/Users/localusername/GithubDocs/login/'
 
 
 loginInfo = json.load(open(login_path+'login.json'))
