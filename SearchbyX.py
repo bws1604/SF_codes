@@ -3,7 +3,7 @@
 """
 Created on Thu Sep 23 16:35:59 2021
 
-@author: barbarawilsonsoto
+@author: 'localusername'
 """
 
 import numpy as np
@@ -15,8 +15,8 @@ import csv
 
 from simple_salesforce import Salesforce, SalesforceLogin, SFType
 
-path = '/Users/barbarawilsonsoto/GithubDocs/Digin2022/'
-login_path='/Users/barbarawilsonsoto/GithubDocs/login/'
+path = '/Users/'localusername'/GithubDocs/Digin2022/'
+login_path='/Users/'localusername'/GithubDocs/login/'
 
 loginInfo = json.load(open(login_path + 'login.json'))
 username = loginInfo['username']
@@ -48,10 +48,10 @@ for i in search:
     try:
         i = str(i)
     #for contacts searchs:
-        #records = sf.search('FIND {'+i+'} IN Name Fields RETURNING Contact (Id, Name, AccountId, Email)')#',OwnerId, Account.Website, Account.Name, Account.OwnerId, Account.Number_of_Open_Opportunities__c, Account.Account_Status__c, Account.Current_ARR__c, Account.Industry)')
-        #records = sf.search('FIND {'+i+'} IN Email Fields RETURNING Contact (Id, Name, AccountId, Email)')#',OwnerId, Account.Website, Account.Name, Account.OwnerId, Account.Number_of_Open_Opportunities__c, Account.Account_Status__c, Account.Current_ARR__c, Account.Industry)')
+        #records = sf.search('FIND {'+i+'} IN Name Fields RETURNING Contact (Id, Name, AccountId, Email)')
+        #records = sf.search('FIND {'+i+'} IN Email Fields RETURNING Contact (Id, Name, AccountId, Email)')
     #for accounts searchs
-        records = sf.search('FIND {'+i+'} RETURNING Account (Id, Name, OwnerId, LastActivityDate, LastModifiedById, LastModifiedDate, BDR_Status__c, Type, Account_Status__c, Number_of_Open_Opportunities__c, Current_ARR__c, ParentId, Website, Industry)')# Number_of_Open_Opportunities__c, LastActivityDate, LastModifiedById, LastModifiedDate, Current_ARR__c')
+        records = sf.search('FIND {'+i+'} RETURNING Account (Id, Name, OwnerId, LastActivityDate, LastModifiedById, LastModifiedDate, BDR_Status__c, Type, Account_Status__c, Number_of_Open_Opportunities__c, Current_ARR__c, ParentId, Website, Industry)')
         sf_records = pd.DataFrame(records.get('searchRecords'))
         output.append(sf_records)
     except:
@@ -65,5 +65,5 @@ output = pd.concat(output, axis=0)
 #describe goal of the search
 output.to_csv(path+SearchBy+'SearchOutput' +'.csv')
 df = pd.DataFrame(noMatch,columns=['Name'])
-df.to_csv(path+SearchBy+'NoMatchSearchoutput' +'.csv',index=False)
+df.to_csv(path+SearchBy+'NoMatchSearchOutput' +'.csv',index=False)
 
