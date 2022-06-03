@@ -3,7 +3,7 @@
 """
 Created on Tue Sep 28 16:54:01 2021
 
-@author: barbarawilsonsoto
+@author: localusername
 """
 
 import numpy as np
@@ -11,7 +11,7 @@ import pandas as pd
 from datetime import datetime
 import math
 
-path = '/Users/barbarawilsonsoto/GithubDocs/OutboundDist/'
+path = '/Users/localusername/GithubDocs/OutboundDist/'
 mergeby = 'AccId'
 #get the conference list and SFDC master report
 confList = pd.read_csv(path + 'AccId.csv')
