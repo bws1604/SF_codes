@@ -3,7 +3,7 @@
 """
 Created on Mon Sep 13 09:17:07 2021
 
-@author: barbarawilsonsoto
+@author: localusername
 """
 
 import numpy as np
@@ -11,7 +11,7 @@ import pandas as pd
 from datetime import datetime
 import math
 
-path = '/Users/barbarawilsonsoto/GithubDocs/Maryland2022/'
+path = '/Users/localusername/GithubDocs/Maryland2022/'
 
 #get the conference list and SFDC master report
 confList = pd.read_csv(path + 'Email.csv')
