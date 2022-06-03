@@ -3,7 +3,7 @@
 """
 Created on Thu Aug 12 12:56:42 2021
 
-@author: barbarawilsonsoto
+@author: localusername
 """
 
 import json
@@ -13,8 +13,8 @@ from datetime import datetime
 from simple_salesforce import Salesforce, SalesforceLogin, SFType
 
 #specify the location where to save the output documents in a folder outside the Github folder
-path = '/Users/barbarawilsonsoto/GithubDocs/Minnesota/'
-login_path = '/Users/barbarawilsonsoto/GithubDocs/login/'
+path = '/Users/localusername/GithubDocs/Minnesota/'
+login_path = '/Users/localusername/GithubDocs/login/'
 
 loginInfo = json.load(open(login_path + 'login.json'))
 username = loginInfo['username']
@@ -26,11 +26,7 @@ session_id, instance = SalesforceLogin(username=username, password=password, sec
 sf = Salesforce(instance=instance, session_id=session_id)
 
 #set the values or attributes to query
-#values = ['Name', 'AccountId', 'Email', 'OwnerId', 'Account.Website', 'Account.OwnerId', 'Account.Number_of_Open_Opportunities__c', 'Account.LastActivityDate', 'Account.LastModifiedById', 'Account.LastModifiedDate', 'Account.Industry']
-#values = ['Name', 'Id', 'Website', 'OwnerId','Number_of_Open_Opportunities__c','Industry','Current_ARR__c','LastActivityDate','Account_Status__c', 'Callahan_ID__c', 'FDIC_Certificate__c', 'FDIC_Certificate_Number__c', 'Assets_Under_Management__c']
-#values = ['Name', 'Id', 'OwnerId','ParentId','Website','Industry','Number_of_Open_Opportunities__c','Account_Status__c','Current_ARR__c','Assets_Under_Management__c','Insurance_type__c','BillingCountry','LastActivityDate'] 
 #values = ['Name', 'Id', 'Website', 'OwnerId','Industry','Number_of_Open_Opportunities__c','Account_Status__c','Current_ARR__c','LastActivityDate','LastModifiedById','BDR_Status__c','BillingCountry','ParentId']
-#values = ['Name', 'Id','Industry','Insurance_type__c','BillingCountry']
 
 querySOQL = """SELECT (SELECT AccountId, ActivityDate, Subject, OwnerId, PrimaryWhoId from ActivityHistories WHERE ActivityDate > 2018-01-01 AND ActivityDate < 2018-04-01) FROM Account"""
 
