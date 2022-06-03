@@ -3,7 +3,7 @@
 """
 Created on Thu Sep 23 16:35:59 2021
 
-@author: barbarawilsonsoto
+@author: localusername
 """
 
 import numpy as np
@@ -15,8 +15,8 @@ import csv
 
 from simple_salesforce import Salesforce, SalesforceLogin, SFType
 
-path = '/Users/barbarawilsonsoto/GithubDocs/JeffKTask/'
-login_path='/Users/barbarawilsonsoto/GithubDocs/login/'
+path = '/Users/localusername/GithubDocs/JeffKTask/'
+login_path='/Users/localusername/GithubDocs/login/'
 
 loginInfo = json.load(open(login_path + 'login.json'))
 username = loginInfo['username']
