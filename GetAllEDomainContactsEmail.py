@@ -3,7 +3,7 @@
 """
 Created on Wed Oct  6 14:22:14 2021
 
-@author: barbarawilsonsoto
+@author: localusername
 """
 def matchString(x,content):
     newlist=[]
@@ -48,7 +48,7 @@ el = ['http://','https://','www.','\n']
 # finallist = matchString(el[2], finallist)
 # finallist = matchString(el[3], finallist)   
 
-path = '/Users/barbarawilsonsoto/GithubDocs/JeffKTask/'
+path = '/Users/localusername/GithubDocs/example/'
 # mergeby = 'AccId2'
 #get the conference list and SFDC master report
 # confList = pd.read_csv(path + 'AccId.csv')
